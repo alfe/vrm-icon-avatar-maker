@@ -1,8 +1,90 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+        background: #EEE;
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        height: 90vh;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .content > div {
+        width: 49.5%;
+        height: 100%;
+        background: #FFF;
+        border-radius: 5px;
+        overflow: hidden;
+    }
 
-a {
-  color: #00B7FF;
-}
+    div.icon_avater {
+        background: #393939;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-icon {
+        width: 200px;
+    }
+    .icon_avater_img {
+        width: 480px;
+    }
+
+    input[type="name"] {
+        border: none;
+        border-bottom: 1px dotted;
+        padding: .5em;
+        margin: 1em;
+        font-size: 2em;
+    }
+    input[type="file"] {
+        border: none;
+        border-bottom: 1px dotted;
+        padding: .5em;
+        font-size: 2em;
+    }
+    .space {
+        padding: 5vh;
+    }
+    .file_button {
+        display: inline-block;
+        position: relative;
+        padding: 1em 2.2em;
+        margin: 1em 2em;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+        background-color: #2772DB;
+        overflow: hidden;
+        transition: .3s ease;
+        user-select: none;
+    }
+    .file_button:hover {
+        background-color: #2062bf;
+    }
+    .file_input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .send_button {
+        display: block;
+        position: relative;
+        font-size: 2em;
+        padding: 2em 5em;
+        margin: 4em 1em 1em;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+        background-color: #161180;
+        overflow: hidden;
+        transition: .3s ease;
+        cursor: pointer;
+    }
