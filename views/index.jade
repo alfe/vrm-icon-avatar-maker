@@ -7,9 +7,17 @@ block content
       img(src="/images/icon.jpg", id="user-icon", class="user-icon")
       img(src="/images/icon_bk.png", class="icon_avater_img", alt="avater")
     div
-      div(class="space")
       form(method="post", enctype="multipart/form-data", action="/")
         input(id="username", type="name", name="username", placeholder="名前 or Twitter ID", required)
+        div(class="model-type")
+          label(class="model-type-label")
+            img(src="/images/human.png", class="model-type-img")
+            span ヒトガタ
+            input(type="radio" name="type" value="human" selected)
+          label(class="model-type-label")
+            img(src="/images/robo.png", class="model-type-img")
+            span ロボ
+            input(type="radio" name="type" value="robo" selected)
         div(class="file_button") アイコン画像を選択
           input(id="icon", class="file_input", type="file", name="uploadedfile", accept="image/png, image/jpeg", required)
         input(type="submit" class="send_button")

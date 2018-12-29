@@ -5,13 +5,15 @@ body {
     }
     .content {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
         height: 90vh;
         max-width: 1200px;
         width: 100%;
     }
     .content > div {
         width: 49.5%;
+        min-width: 550px;
         height: 100%;
         background: #FFF;
         border-radius: 5px;
@@ -31,6 +33,21 @@ body {
     }
     .icon_avater_img {
         width: 480px;
+    }
+    .model-type {
+        display: flex;
+    }
+    .model-type-label {
+        margin: 0px 1rem;
+        padding: 1rem;
+        border: 2px solid #666;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .model-type-img {
+        width: 200px;
     }
 
     input[type="name"] {
@@ -78,8 +95,8 @@ body {
         display: block;
         position: relative;
         font-size: 2em;
-        padding: 2em 5em;
-        margin: 4em 1em 1em;
+        padding: 1em 5em;
+        margin: .5em 1em;
         text-align: center;
         color: #fff;
         border-radius: 4px;

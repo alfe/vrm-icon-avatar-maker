@@ -8,9 +8,14 @@ var multer = require('multer');
 
 const { ConvertGLBtoGltf, ConvertGltfToGLB, ConvertToGLB} = require('gltf-import-export');
 const GltfFile = './uploads/icon_avatar.vrm.gltf';
+const GltfFileRobo = './uploads/IconAvatarRobo.gltf';
 let gltf;
+let gltfRobo;
 fs.readFile(GltfFile, 'utf8', (err, text) => {
 	gltf = text;
+});
+fs.readFile(GltfFileRobo, 'utf8', (err, text) => {
+	gltfRobo = text;
 });
 
 var indexRouter = require('./routes/index');
@@ -41,17 +46,38 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.post('/', upload.single('uploadedfile'), function (req, res) {
-	const returnGltf = JSON.parse(gltf);
-	returnGltf.images = [{
-		name: "icon",
-		uri: './' + '[' + req.body.username + ']' + req.file.originalname,
-    }]
-    returnGltf.extensions.VRM.meta.author = req.body.username;
-    returnGltf.extensions.VRM.meta.contactInformation = "@" + req.body.username;
-    returnGltf.extensions.VRM.meta.title = "icon_avatar_" + req.body.username;
+  let returnGltf, glbFileName = '';
+  console.log(req.body);
 
-	const outputGlb = './vrm/' + req.body.username + '.vrm';
-    ConvertToGLB(returnGltf, GltfFile, outputGlb);
+  switch (req.body.type) {
+    case 'robo':
+    // for nukomiya robo
+      returnGltf = JSON.parse(gltfRobo);
+      returnGltf.images[3] = {
+        name: "icon",
+        uri: './' + '[' + req.body.username + ']' + req.file.originalname,
+      };
+      glbFileName = GltfFileRobo;
+    break;
+
+    case 'human':
+    default:
+      // for white human
+      returnGltf = JSON.parse(gltf);
+      returnGltf.images = [{
+        name: "icon",
+        uri: './' + '[' + req.body.username + ']' + req.file.originalname,
+      }];
+      glbFileName = GltfFile;
+    break;
+  }
+
+  returnGltf.extensions.VRM.meta.author = req.body.username;
+  returnGltf.extensions.VRM.meta.contactInformation = "@" + req.body.username;
+  returnGltf.extensions.VRM.meta.title = "icon_avatar_" + req.body.username;
+
+  const outputGlb = './vrm/' + req.body.username + '.vrm';
+    ConvertToGLB(returnGltf, glbFileName, outputGlb);
     res.redirect(301, '/vrms/' + req.body.username + '.vrm');
 });
 
