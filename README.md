@@ -1,1 +1,1 @@
-# vrm-icon-avater-maker
+# vrm-icon-avatar-maker
