@@ -281,7 +281,7 @@
         "firstPersonBone": 5,
         "firstPersonBoneOffset": {
           "x": 0,
-          "y": 0,
+          "y": 0.1,
           "z": 0
         },
         "meshAnnotations": [
@@ -495,12 +495,113 @@
         {
           "name": "Transparent",
           "renderQueue": 2450,
-          "shader": "VRM_USE_GLTFSHADER",
-          "floatProperties": {},
-          "vectorProperties": {},
-          "textureProperties": {},
-          "keywordMap": {},
-          "tagMap": {}
+          "shader": "VRM/MToon",
+          "floatProperties": {
+            "_Cutoff": 1,
+            "_BumpScale": 1,
+            "_ReceiveShadowRate": 1,
+            "_ShadingGradeRate": 1,
+            "_ShadeShift": 0,
+            "_ShadeToony": 0.9,
+            "_LightColorAttenuation": 0,
+            "_IndirectLightIntensity": 0.1,
+            "_OutlineWidth": 0.5,
+            "_OutlineScaledMaxDistance": 1,
+            "_OutlineLightingMix": 1,
+            "_DebugMode": 0,
+            "_BlendMode": 1,
+            "_OutlineWidthMode": 0,
+            "_OutlineColorMode": 0,
+            "_CullMode": 1,
+            "_OutlineCullMode": 2,
+            "_SrcBlend": 1,
+            "_DstBlend": 0,
+            "_ZWrite": 1
+          },
+          "vectorProperties": {
+            "_Color": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "_ShadeColor": [
+              0.969999969,
+              0.81,
+              0.86,
+              1
+            ],
+            "_MainTex": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ShadeTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_BumpMap": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ReceiveShadowTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ShadingGradeTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_SphereAdd": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_EmissionColor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "_EmissionMap": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_OutlineWidthTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_OutlineColor": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "textureProperties": {
+            "_MainTex": 0,
+            "_ShadeTexture": 0
+          },
+          "keywordMap": {
+            "_ALPHATEST_ON": true
+          },
+          "tagMap": {
+            "RenderType": "TransparentCutout"
+          }
         },
         {
           "name": "MainBody",
@@ -515,12 +616,111 @@
         {
           "name": "Icon",
           "renderQueue": 2000,
-          "shader": "VRM_USE_GLTFSHADER",
-          "floatProperties": {},
-          "vectorProperties": {},
-          "textureProperties": {},
+          "shader": "VRM/MToon",
+          "floatProperties": {
+            "_Cutoff": 0.5,
+            "_BumpScale": 1,
+            "_ReceiveShadowRate": 1,
+            "_ShadingGradeRate": 1,
+            "_ShadeShift": 1,
+            "_ShadeToony": 1,
+            "_LightColorAttenuation": 0,
+            "_IndirectLightIntensity": 0,
+            "_OutlineWidth": 0.5,
+            "_OutlineScaledMaxDistance": 1,
+            "_OutlineLightingMix": 1,
+            "_DebugMode": 0,
+            "_BlendMode": 0,
+            "_OutlineWidthMode": 0,
+            "_OutlineColorMode": 0,
+            "_CullMode": 2,
+            "_OutlineCullMode": 1,
+            "_SrcBlend": 1,
+            "_DstBlend": 0,
+            "_ZWrite": 1
+          },
+          "vectorProperties": {
+            "_Color": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "_ShadeColor": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "_MainTex": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ShadeTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_BumpMap": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ReceiveShadowTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_ShadingGradeTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_SphereAdd": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_EmissionColor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "_EmissionMap": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_OutlineWidthTexture": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "_OutlineColor": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "textureProperties": {
+            "_MainTex": 3,
+            "_ShadeTexture": 3
+          },
           "keywordMap": {},
-          "tagMap": {}
+          "tagMap": {
+            "RenderType": "Opaque"
+          }
         }
       ]
     }
@@ -680,7 +880,7 @@
       "uri": "IconAvatarRobo_img0.png"
     },
     {
-      "name": "IconAvatarRobo-Tex",
+      "name": "IconAvatarRobo_img1",
       "uri": "IconAvatarRobo_img1.png"
     },
     {
@@ -753,6 +953,11 @@
         "metallicFactor": 0,
         "roughnessFactor": 0.9
       },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
       "doubleSided": false,
       "alphaMode": "MASK",
       "extensions": {
@@ -803,6 +1008,11 @@
         "metallicFactor": 0,
         "roughnessFactor": 0.9
       },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
       "doubleSided": false,
       "alphaMode": "OPAQUE",
       "extensions": {
@@ -1009,7 +1219,7 @@
       ],
       "name": "Neck",
       "translation": [
-        3.319581e-8,
+        3.35276127e-8,
         0.123762965,
         -1.1920929e-7
       ],
@@ -1028,7 +1238,7 @@
     {
       "name": "Head",
       "translation": [
-        -1.30807649e-8,
+        -1.3038516e-8,
         0.10972929,
         1.1920929e-7
       ],
@@ -1050,7 +1260,7 @@
       ],
       "name": "Shoulder.L",
       "translation": [
-        3.319581e-8,
+        3.35276127e-8,
         0.123762965,
         -1.1920929e-7
       ],
@@ -1457,7 +1667,7 @@
       ],
       "name": "Shoulder.R",
       "translation": [
-        3.319581e-8,
+        3.35276127e-8,
         0.123762965,
         -1.1920929e-7
       ],
