@@ -47,30 +47,14 @@ var upload = multer({ storage: storage });
 
 app.post('/', upload.single('uploadedfile'), function (req, res) {
   let returnGltf, glbFileName = '';
-  console.log(req.body);
 
-  switch (req.body.type) {
-    case 'robo':
-    // for nukomiya robo
-      returnGltf = JSON.parse(gltfRobo);
-      returnGltf.images[3] = {
-        name: "icon",
-        uri: './' + '[' + req.body.username + ']' + req.file.originalname,
-      };
-      glbFileName = GltfFileRobo;
-    break;
-
-    case 'human':
-    default:
-      // for white human
-      returnGltf = JSON.parse(gltf);
-      returnGltf.images = [{
-        name: "icon",
-        uri: './' + '[' + req.body.username + ']' + req.file.originalname,
-      }];
-      glbFileName = GltfFile;
-    break;
-  }
+  // for white human
+  returnGltf = JSON.parse(gltf);
+  returnGltf.images = [{
+    name: "icon",
+    uri: './' + '[' + req.body.username + ']' + req.file.originalname,
+  }];
+  glbFileName = GltfFile;
 
   returnGltf.extensions.VRM.meta.author = req.body.username;
   returnGltf.extensions.VRM.meta.contactInformation = "@" + req.body.username;

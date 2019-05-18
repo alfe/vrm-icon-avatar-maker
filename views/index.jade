@@ -4,37 +4,13 @@ block content
 
   div(class="content")
     div(id="icon_avatar" class="icon_avatar")
-      img(src="/images/icon.jpg" id="user-icon" class="user-icon")
+      img(src="/images/icon.png" id="user-icon" class="user-icon")
       img(src="/images/icon_bk.png" class="icon_avatar_img" alt="avatar")
     div(class="form-area")
       form(class="input-form" method="post" enctype="multipart/form-data" action="/")
         div(class="username")
           span @
-          input(id="username" type="name" name="username" placeholder="名前 or Twitter ID" required)
-        div(class="model-type")
-          input(id="type-human" type="radio" name="type" value="human" checked)
-          label(class="model-type-label" for="type-human")
-            img(src="/images/human.png" class="model-type-img")
-            span ヒトガタ
-          input(id="type-robo" type="radio" name="type" value="robo")
-          label(class="model-type-label" for="type-robo")
-            img(src="/images/robo.png" class="model-type-img")
-            span ロボ
-        div(class="file_button") アイコン画像を選択
+          input(id="username" type="name" name="username" placeholder="NAME or Twitter ID" required)
+        div(class="file_button") SELECT ICON IMAGE
           input(id="icon" class="file_input" type="file" name="uploadedfile" accept="image/png image/jpeg" required)
         input(type="submit" class="send_button")
-  div(class="cc")
-    p(class="anno") 
-      span ヒトガタ：VRChat用超シンプル素体(
-      a(href="https://cubic9.com/Devel/OculusRift/VRChat/") https://cubic9.com/Devel/OculusRift/VRChat/
-      span )
-    p(class="anno")
-      span ロボ：(
-      a(href="https://twitter.com/phio_alchemist/status/993374880543395841") https://twitter.com/phio_alchemist/status/993374880543395841
-      span )
-    p 
-      span 🄫 2018-2019 みみんく(
-      a(href="https://twitter.com/mmnk_vt") @mmnk_vt
-      span )
-
-
