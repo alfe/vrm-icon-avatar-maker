@@ -55,7 +55,8 @@ app.post('/vrm/', upload.single('uploadedfile'), (req, res) => {
     } ) ;
   }
   console.log(hex2rgb(req.body.color));
-  returnGltf.materials[1].pbrMetallicRoughness.baseColorFactor = [...hex2rgb(req.body.color), 1];
+  returnGltf.extensions.VRM.materialProperties[1].vectorProperties._Color = [...hex2rgb(req.body.color), 1];
+  returnGltf.extensions.VRM.materialProperties[1].vectorProperties._ShadeColor = [...hex2rgb(req.body.color), 1];
   console.log(returnGltf.materials[1].pbrMetallicRoughness.baseColorFactor);
   glbFileName = GltfFile;
   
