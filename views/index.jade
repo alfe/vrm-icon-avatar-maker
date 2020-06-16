@@ -4,13 +4,13 @@ block content
 
   div(class="content")
     div(id="icon_avatar" class="icon_avatar")
-      img(src="/images/icon.png" id="user-icon" class="user-icon")
-      img(src="/images/icon_bk.png" class="icon_avatar_img" alt="avatar")
+      img(src="/images/img.png" id="user-icon" class="user-icon")
     div(class="form-area")
-      form(class="input-form" method="post" enctype="multipart/form-data" action="/")
+      form(class="input-form" method="post" enctype="multipart/form-data" action="/vrm/")
         div(class="username")
           span @
           input(id="username" type="name" name="username" placeholder="NAME or Twitter ID" required)
-        div(class="file_button") SELECT ICON IMAGE
-          input(id="icon" class="file_input" type="file" name="uploadedfile" accept="image/png image/jpeg" required)
+        div
+          input(id="color" type="color" name="color" value="#666666")
+          label(for="color") カラー
         input(type="submit" class="send_button")
