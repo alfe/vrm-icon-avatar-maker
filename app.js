@@ -45,7 +45,6 @@ app.post('/vrm/', upload.single('uploadedfile'), (req, res) => {
   let returnGltf, glbFileName = '';
   
   // for white human
-  returnGltf = JSON.parse(gltf);
   const hex2rgb = ( hex = "" ) => {
     if ( hex.slice(0, 1) == "#" ) hex = hex.slice(1) ;
     if ( hex.length == 3 ) hex = hex.slice(0,1) + hex.slice(0,1) + hex.slice(1,2) + hex.slice(1,2) + hex.slice(2,3) + hex.slice(2,3) ;
@@ -54,11 +53,10 @@ app.post('/vrm/', upload.single('uploadedfile'), (req, res) => {
       return parseInt( str, 16 ) / 255;
     } ) ;
   }
-  console.log(hex2rgb(req.body.color));
+  glbFileName = GltfFile;
+  returnGltf = JSON.parse(gltf);
   returnGltf.extensions.VRM.materialProperties[1].vectorProperties._Color = [...hex2rgb(req.body.color), 1];
   returnGltf.extensions.VRM.materialProperties[1].vectorProperties._ShadeColor = [...hex2rgb(req.body.color), 1];
-  console.log(returnGltf.materials[1].pbrMetallicRoughness.baseColorFactor);
-  glbFileName = GltfFile;
   
   returnGltf.extensions.VRM.meta.author = req.body.username;
   returnGltf.extensions.VRM.meta.contactInformation = "@" + req.body.username;
