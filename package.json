@@ -5,7 +5,9 @@
   "license": "MIT",
   "author": "@alfe_below",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
@@ -15,9 +17,11 @@
     "http-errors": "^1.6.2",
     "jade": "^1.11.0",
     "morgan": "^1.9.0",
-    "multer": "^1.4.1"
+    "multer": "^1.4.1",
+    "@snyk/protect": "latest"
   },
   "resolutions": {
     "minimist": "^1.2.6"
-  }
+  },
+  "snyk": true
 }
